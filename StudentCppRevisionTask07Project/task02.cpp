@@ -21,6 +21,27 @@
  *	[output 3]: 4 7 7
  */
 
-string task02(int a, int b, int c) {	
-	return "a b c";
+string task02(int a, int b, int c) {
+	if (c < b)
+	{
+		int t = c;
+		c = b;
+		b = t;
+	}
+
+	if (b < a)
+	{
+		int t = b;
+		b = a;
+		a = t;
+	}
+
+	if (c < b)
+	{
+		int t = c;
+		c = b;
+		b = t;
+	}
+
+	return to_string(a) + " " + to_string(b) + " " + to_string(c);
 }
