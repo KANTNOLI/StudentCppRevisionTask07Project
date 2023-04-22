@@ -22,6 +22,9 @@
  *
  *	[ input 1]: 4 6 5 6 5 6
  *	[output 1]: true
+ * 
+ * 4 5 6
+ * 5 6 6
  *
  *	[ input 2]: 3 5 5 2 3 4
  *	[output 2]: false
@@ -34,5 +37,49 @@
  */
 
 bool task03(int x, int y, int z, int a, int b, int c) {
-	return false;
+	if (z < y)
+	{
+		int t = y;
+		y = z;
+		z = t;
+	}
+
+	if (y < x)
+	{
+		int t = x;
+		x = y;
+		y = t;
+	}
+
+	if (z < y)
+	{
+		int t = y;
+		y = z;
+		z = t;
+	}
+
+
+	if (c < b)
+	{
+		int t = c;
+		c = b;
+		b = t;
+	}
+
+	if (b < a)
+	{
+		int t = b;
+		b = a;
+		a = t;
+	}
+
+	if (c < b)
+	{
+		int t = c;
+		c = b;
+		b = t;
+	}
+
+	return x <= 0 || y <= 0 || z <= 0 || a <= 0 || b <= 0 || c <= 0 ? false : 
+		x <= a && y <= b && z <= c ? true : false;
 }
