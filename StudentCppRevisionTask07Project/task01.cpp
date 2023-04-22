@@ -38,5 +38,18 @@
  */
 
 int task01(int n, int m, int x, int y) {	
-	return -1;
+	if (x > n || y > m || x < n && x < m && y < n|| y < n && y < m && x < m)
+	{
+		int t = x;
+		x = y;
+		y = t;
+	}
+	int result = x > n || y > m || x < 0 || y < 0 || n < 0 || m < 0 ? -1 :
+		x == n || y == m || x == 0 || y == 0 ? 0 :
+		x <= n - x && x < y && x < m - y ? x :
+		y <= m - y && y < x && y < n - x ? y :
+		n - x <= x && n - x < y && n - x < m - y ? n - x :
+		m - y < x && m - y < n - x && m - y <= y ? m - y : -1;
+
+	return result;
 }
